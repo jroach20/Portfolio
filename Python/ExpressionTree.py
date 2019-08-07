@@ -58,4 +58,4 @@ tree.right.left = node(4)
 tree.right.right = node(5)
 
 
-print (evaluateExpressionTree(tree))
+print (tree.evaluateExpressionTree(tree))
