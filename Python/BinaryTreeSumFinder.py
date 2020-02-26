@@ -56,24 +56,28 @@ class tree:
     def kFinder(k, para):
         a = tree()
         nodes = a.makeList(para)
+        result = None
         
-        TheresK = False
         for i in range(len(nodes)):
             for j in range(len(nodes)):
+                
+                if (i == j):
+                    continue
+                
                 c = nodes[i] + nodes [j]
                 
                 if (c == k):
-                    TheresK = True
                     first = j
                     second = i
                     result = nodes[first],"+",nodes[second],"=",k
                     result = " ".join(map(str,result))
                     break
-                
-                else:
-                    result = "not there, mate."
+        
+        if (result == None):
+            result = "k isn't there"
         
         return result
+
 t = tree()
 
 for i in [10,5,15,11,15]:
