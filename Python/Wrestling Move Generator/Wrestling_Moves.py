@@ -5,9 +5,9 @@ from random import randrange
   
 
 """ All information is scraped from Wikipedia.
-You must have the file "wrestling Weblist.txt in the same 
+You must have the files wrestling Weblist.txt and wrestling.txt in the same 
 directory as this file for the program to work.
-Run MoveGenerator first before running Reader."""
+If you do not have wrestling.txt, run MoveGenerator first before running Reader."""
 
 def scraper(tag):
     double_quote = '"'
@@ -29,8 +29,8 @@ def scraper(tag):
 
 # read urls of websites from text file
 def MoveGenerator():
-    file = open("Fact Lists\wrestling.txt","w+",encoding = "utf-8")
-    list_open = open("Web Lists\wrestling WebList.txt","r")
+    file = open("wrestling.txt","w+",encoding = "utf-8")
+    list_open = open("wrestling WebList.txt","r")
     read_list = list_open.read()
     url = read_list.split("\n")
     headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36'}
@@ -67,11 +67,11 @@ def MoveGenerator():
 
 def reader():
     data = []
-    with open('Fact Lists\wrestling.txt', 'r') as f:
+    with open('wrestling.txt', 'r') as f:
         data = f.readlines()
     
     print(data[randrange(len(data))])
 
 
-# Run first if you haven't already: MoveGenerator()
+#MoveGenerator()
 reader()
